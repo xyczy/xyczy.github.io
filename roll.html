@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>438抽奖网页</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+	<div>
+		<textarea id="ps" placeholder="输入备选人，用回车分隔"  class="form-control" rows="3"></textarea>
+	</div>
+	<button id="go" class="btn btn-primary" style="width:100%;">抽奖</button>
+	<script>
+		document.getElementById('go').onclick = function() {
+			var ps = document.getElementById('ps').value.split('\n');
+			var count = ps.length;
+			var index = Math.floor(Math.random() * count);
+			var result = ps[index];
+			alert("中奖人是：" + result);
+		}
+	</script>
+</body>
+</html>
